@@ -75,18 +75,41 @@ class DummyVerleihService extends AbstractObservableService
     @Override
     public void nimmZurueck(List<Medium> medien, Datum rueckgabeDatum)
     {
+
     }
 
     @Override
     public boolean sindAlleNichtVerliehen(List<Medium> medien)
     {
-        return RANDOM.nextBoolean();
+        boolean result = true;
+        for (Medium medium : medien)
+        {
+            if (istVerliehen(medium))
+            {
+                result = false;
+            }
+
+        }
+        return result;
+
     }
 
     @Override
     public boolean sindAlleVerliehen(List<Medium> medien)
     {
-        return RANDOM.nextBoolean();
+        boolean result = false;
+        for (Medium medium : medien)
+        {
+
+            if (istVerliehen(medium))
+            {
+                result = true;
+
+            }
+
+        }
+        return result;
+
     }
 
     @Override
