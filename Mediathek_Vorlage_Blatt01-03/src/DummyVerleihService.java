@@ -155,6 +155,12 @@ class DummyVerleihService extends AbstractObservableService
     @Override
     public boolean istVerleihenMoeglich(Kunde kunde, List<Medium> medien)
     {
-        return false;
+        if (kundeImBestand(kunde) && medienImBestand(medien))
+        {
+            return true;
+
+        }
+        else
+            return false;
     }
 }
