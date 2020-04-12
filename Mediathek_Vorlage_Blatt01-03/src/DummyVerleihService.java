@@ -60,7 +60,16 @@ class DummyVerleihService extends AbstractObservableService
     @Override
     public boolean istVerliehen(Medium medium)
     {
-        return RANDOM.nextBoolean();
+        if (VERLEIHKARTE.getEntleiher() == null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        //return VERLEIHKARTE.getMedium()
+        //return RANDOM.nextBoolean();
     }
 
     @Override
