@@ -75,6 +75,11 @@ class DummyVerleihService extends AbstractObservableService
     @Override
     public void nimmZurueck(List<Medium> medien, Datum rueckgabeDatum)
     {
+        if (sindAlleVerliehen(medien) && rueckgabeDatum != null)
+        {
+            sindAlleNichtVerliehen(medien);
+            //Verleihkarte sollte gelöscht sein
+        }
 
     }
 
