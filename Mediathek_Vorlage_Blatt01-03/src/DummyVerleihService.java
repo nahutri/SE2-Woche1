@@ -27,6 +27,7 @@ class DummyVerleihService extends AbstractObservableService
             MedienbestandService medienbestand,
             List<Verleihkarte> initialBestand)
     {
+
     }
 
     @Override
@@ -117,9 +118,20 @@ class DummyVerleihService extends AbstractObservableService
 
     }
 
-    @Override
+    private Verleihkarte NEUKARTE;
+
     public void verleiheAn(Kunde kunde, List<Medium> medien, Datum ausleihDatum)
     {
+        if (sindAlleNichtVerliehen(medien) && kundeImBestand(kunde)
+                && ausleihDatum != null)
+        {
+            NEUKARTE = new Verleihkarte(kunde, MEDIUM, ausleihDatum);
+
+        }
+        else
+        {
+            System.out.println("Fehler beim Protokollieren!");
+        }
     }
 
     @Override
