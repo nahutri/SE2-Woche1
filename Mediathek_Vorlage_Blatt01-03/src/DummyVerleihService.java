@@ -23,10 +23,17 @@ class DummyVerleihService extends AbstractObservableService
     private static final Verleihkarte VERLEIHKARTE = new Verleihkarte(ENTLEIHER,
             MEDIUM, Datum.heute());
 
+    private List<Verleihkarte> _verleihkarten;
+    private MedienbestandService _medienbestand;
+    private KundenstammService _kundenstamm;
+
     public DummyVerleihService(KundenstammService kundenstamm,
             MedienbestandService medienbestand,
             List<Verleihkarte> initialBestand)
     {
+        _verleihkarten = initialBestand;
+        _medienbestand = medienbestand;
+        _kundenstamm = kundenstamm;
 
     }
 
