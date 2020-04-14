@@ -27,6 +27,15 @@ class DummyVerleihService extends AbstractObservableService
     private MedienbestandService _medienbestand;
     private KundenstammService _kundenstamm;
 
+    /**
+     * Code geändert
+     * Konstruktor der Klasse
+     * 
+     * 
+     * @param kundenstamm
+     * @param medienbestand
+     * @param initialBestand
+     */
     public DummyVerleihService(KundenstammService kundenstamm,
             MedienbestandService medienbestand,
             List<Verleihkarte> initialBestand)
@@ -37,7 +46,9 @@ class DummyVerleihService extends AbstractObservableService
 
     }
 
-    @Override
+    /**
+     * Funtionalität siehe Interface VerleihService
+     */
     public List<Medium> getAusgelieheneMedienFuer(Kunde kunde)
     {
         List<Medium> ergebnisListe = new ArrayList<Medium>();
@@ -45,13 +56,17 @@ class DummyVerleihService extends AbstractObservableService
         return ergebnisListe;
     }
 
-    @Override
+    /**
+     * Funtionalität siehe Interface VerleihService
+     */
     public Kunde getEntleiherFuer(Medium medium)
     {
         return ENTLEIHER;
     }
 
-    @Override
+    /**
+     * Funtionalität siehe Interface VerleihService
+     */
     public Verleihkarte getVerleihkarteFuer(Medium medium)
     {
         return VERLEIHKARTE;
@@ -65,7 +80,10 @@ class DummyVerleihService extends AbstractObservableService
         return ergebnisListe;
     }
 
-    @Override
+    /**
+     * Code geändert
+     * Funtionalität siehe Interface VerleihService
+     */
     public boolean istVerliehen(Medium medium)
     {
         if (VERLEIHKARTE.getEntleiher() == null)
@@ -80,7 +98,10 @@ class DummyVerleihService extends AbstractObservableService
         //return RANDOM.nextBoolean();
     }
 
-    @Override
+    /**
+     * Code geändert
+     * Funktioniert nicht: es gibt keine Löschmethode für die List<Verleihkarte>
+     */
     public void nimmZurueck(List<Medium> medien, Datum rueckgabeDatum)
     {
         if (sindAlleVerliehen(medien) && rueckgabeDatum != null)
@@ -91,7 +112,10 @@ class DummyVerleihService extends AbstractObservableService
 
     }
 
-    @Override
+    /**
+     * Code geändert
+     * Funtionalität siehe Interface VerleihService
+     */
     public boolean sindAlleNichtVerliehen(List<Medium> medien)
     {
         boolean result = true;
@@ -107,7 +131,10 @@ class DummyVerleihService extends AbstractObservableService
 
     }
 
-    @Override
+    /**
+     * Code geändert
+     * Funtionalität siehe Interface VerleihService
+     */
     public boolean sindAlleVerliehen(List<Medium> medien)
     {
         boolean result = false;
@@ -125,6 +152,10 @@ class DummyVerleihService extends AbstractObservableService
 
     }
 
+    /**
+     * Code geändert
+     * Funktioniert nicht: Es gibt keine ProtokollierException Klasse
+     */
     private Verleihkarte NEUKARTE;
 
     public void verleiheAn(Kunde kunde, List<Medium> medien, Datum ausleihDatum)
@@ -141,19 +172,25 @@ class DummyVerleihService extends AbstractObservableService
         }
     }
 
-    @Override
+    /**
+     * Funtionalität siehe Interface VerleihService
+     */
     public boolean kundeImBestand(Kunde kunde)
     {
         return ENTLEIHER.equals(kunde);
     }
 
-    @Override
+    /**
+     * Funtionalität siehe Interface VerleihService
+     */
     public boolean mediumImBestand(Medium medium)
     {
         return MEDIUM.equals(medium);
     }
 
-    @Override
+    /**
+     * Funtionalität siehe Interface VerleihService
+     */
     public boolean medienImBestand(List<Medium> medien)
     {
         boolean result = true;
@@ -168,7 +205,9 @@ class DummyVerleihService extends AbstractObservableService
         return result;
     }
 
-    @Override
+    /**
+     * Funtionalität siehe Interface VerleihService
+     */
     public List<Verleihkarte> getVerleihkartenFuer(Kunde kunde)
     {
         List<Verleihkarte> result = new ArrayList<Verleihkarte>();
@@ -176,7 +215,10 @@ class DummyVerleihService extends AbstractObservableService
         return result;
     }
 
-    @Override
+    /**
+     * Code geändert
+     * Funtionalität siehe Interface VerleihService
+     */
     public boolean istVerleihenMoeglich(Kunde kunde, List<Medium> medien)
     {
         if (kundeImBestand(kunde) && medienImBestand(medien))
