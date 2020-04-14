@@ -25,6 +25,7 @@ class StartUpMediathek_Blatt_01_03
      */
     public static void main(String[] args)
     {
+
         System.out.println("mit SE2Format (1.1.4)");
         pruefeObAssertionsAktiviert();
         erstelleServices();

@@ -46,6 +46,7 @@ class DummyVerleihService extends AbstractObservableService
 
     }
 
+    @Override
     /**
      * Funtionalität siehe Interface VerleihService
      */
@@ -56,6 +57,7 @@ class DummyVerleihService extends AbstractObservableService
         return ergebnisListe;
     }
 
+    @Override
     /**
      * Funtionalität siehe Interface VerleihService
      */
@@ -64,6 +66,7 @@ class DummyVerleihService extends AbstractObservableService
         return ENTLEIHER;
     }
 
+    @Override
     /**
      * Funtionalität siehe Interface VerleihService
      */
@@ -80,6 +83,7 @@ class DummyVerleihService extends AbstractObservableService
         return ergebnisListe;
     }
 
+    @Override
     /**
      * Code geändert
      * Funtionalität siehe Interface VerleihService
@@ -98,6 +102,7 @@ class DummyVerleihService extends AbstractObservableService
         //return RANDOM.nextBoolean();
     }
 
+    @Override
     /**
      * Code geändert
      * Funktioniert nicht: es gibt keine Löschmethode für die List<Verleihkarte>
@@ -112,6 +117,7 @@ class DummyVerleihService extends AbstractObservableService
 
     }
 
+    @Override
     /**
      * Code geändert
      * Funtionalität siehe Interface VerleihService
@@ -131,6 +137,7 @@ class DummyVerleihService extends AbstractObservableService
 
     }
 
+    @Override
     /**
      * Code geändert
      * Funtionalität siehe Interface VerleihService
@@ -152,12 +159,13 @@ class DummyVerleihService extends AbstractObservableService
 
     }
 
+    private Verleihkarte NEUKARTE;
+
+    @Override
     /**
      * Code geändert
      * Funktioniert nicht: Es gibt keine ProtokollierException Klasse
      */
-    private Verleihkarte NEUKARTE;
-
     public void verleiheAn(Kunde kunde, List<Medium> medien, Datum ausleihDatum)
     {
         if (sindAlleNichtVerliehen(medien) && kundeImBestand(kunde)
@@ -172,6 +180,7 @@ class DummyVerleihService extends AbstractObservableService
         }
     }
 
+    @Override
     /**
      * Funtionalität siehe Interface VerleihService
      */
@@ -180,6 +189,7 @@ class DummyVerleihService extends AbstractObservableService
         return ENTLEIHER.equals(kunde);
     }
 
+    @Override
     /**
      * Funtionalität siehe Interface VerleihService
      */
@@ -188,6 +198,7 @@ class DummyVerleihService extends AbstractObservableService
         return MEDIUM.equals(medium);
     }
 
+    @Override
     /**
      * Funtionalität siehe Interface VerleihService
      */
@@ -205,6 +216,7 @@ class DummyVerleihService extends AbstractObservableService
         return result;
     }
 
+    @Override
     /**
      * Funtionalität siehe Interface VerleihService
      */
@@ -215,6 +227,7 @@ class DummyVerleihService extends AbstractObservableService
         return result;
     }
 
+    @Override
     /**
      * Code geändert
      * Funtionalität siehe Interface VerleihService
